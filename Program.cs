@@ -4,44 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace perfect_numbers
+namespace Prime_Numbers
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("enter the first No");
-            int x=int.Parse(Console.ReadLine());
 
-            Console.WriteLine("enter the seconde No");
+            Console.Write("the first No : ");
+            int x = int.Parse(Console.ReadLine());
+            Console.Write("the seconde No : ");
             int y = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("the perfect numbers here is : ");
-            Console.WriteLine("___________________________");
-           
+            Console.WriteLine("the prime numbers here is : ");
 
             for (int m = x; m <= y; m++)
             {
+                int c = 0;
 
-                int sum = 0;
-
-                for (int n = 1; n < m; n++)
+                for (int n = 2; n < m; n++)
                 {
-
                     if (m % n == 0)
-                        sum += n;
-
+                    {
+                        c++;
+                        break;
+                    }
                 }
 
-                if (sum == m)
+                if (c == 0 && m != 1)
                     Console.WriteLine(m);
+
+
+
 
             }
 
-
-
-
-
+           }
         }
     }
-}
+
